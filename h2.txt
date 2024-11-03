@@ -1,39 +1,3 @@
-git pull https://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@github.com/tue09/VLP_NLU.git
-find . -mindepth 1 -maxdepth 1 ! -name 'NeuroMax_H' -exec rm -rf {} +
-
-find . -mindepth 1 -maxdepth 1 ! -name 'Model_Hackathon' -exec rm -rf {} +
-
-scp -P 8000 -r /C/Users/tueldt/Documents/Vin/NLP/Model_Hackathon kc@label.bkict.org:~/nam_x/NeuroMax_/VCL_NLU
-
-wget -O ./wikipedia/ https://hobbitdata.informatik.uni-leipzig.de/homes/mroeder/palmetto/Wikipedia_bd.zip
-
-wget -P ./wikipedia/ https://hobbitdata.informatik.uni-leipzig.de/homes/mroeder/palmetto/Wikipedia_bd.zip --no-check-certificate
-
-wget -P ./wikipedia/ https://www.kaggle.com/datasets/pdt46840/wikipedia --no-check-certificate
-
-unzip ./Wikipedia_bd.zip
-unzip Wikipedia_bd.zip
-
-mv datasets/wikipedia/wikipedia/Wikipedia_bd.zip datasets/wikipedia/Wikipedia_bd.zip
-
-rm -rf wikipedia
-
-scp -r ~/my_data kc@192.168.1.100:/home/kc/datasets/wikipedia
-
-scp -r /C:/Users/tueldt/Documents/NeuroMax/NeuroMax_K/datasets/wikipedia kc@label.bkict.org:~/nam_x/NeuroMax_/NeuroMax_H/datasets
-
-scp -P 8000 -r /C/Users/tueldt/Documents/NeuroMax/NeuroMax_K/datasets/wikipedia kc@label.bkict.org:~/nam_x/NeuroMax_/NeuroMax_H/datasets
-
-scp -P 8000 -r /C/Users/tueldt/Documents/NeuroMax/NeuroMax_K/datasets/wikipedia kc@label.bkict.org:~/nam_x/NeuroMax_ETM_TRAM/datasets
-
-scp -P 8000 -r /C/Users/tueldt/Documents/NeuroMax/NeuroMax_K/datasets/wikipedia kc@label.bkict.org:~/nam_x/NeuroMax_ETM_TRAM/datasets
-
-scp -P 44139 -r /C/Users/tueldt/Documents/NeuroMax/NeuroMax_K/datasets/wikipedia root@67.2.199.21:~/nam_x/NeuroMax_ETM_TRAM/datasets
-scp -i vast.pem -P 44139 -r /C/Users/tueldt/Documents/NeuroMax/NeuroMax_K/datasets/wikipedia root@67.2.199.21:~/NeuroMax/datasets
-
-ssh -i C:/Users/tueldt/Documents/NeuroMax/vast.pem -p 44139 root@67.2.199.21
-19081999
-
 du -h --max-depth=1
 
 git checkout origin/master -- NeuroMax
