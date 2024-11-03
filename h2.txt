@@ -1,4 +1,4 @@
-git pull https://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@github.com/tue09/VCL_NLU.git
+git pull https://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@github.com/tue09/VLP_NLU.git
 find . -mindepth 1 -maxdepth 1 ! -name 'NeuroMax_H' -exec rm -rf {} +
 
 find . -mindepth 1 -maxdepth 1 ! -name 'Model_Hackathon' -exec rm -rf {} +
@@ -92,6 +92,41 @@ python3 main.py --token_level word-level \
                 --pretrained \
                 --pretrained_path Model_Hackathon/JointCLBERT-CRF_PhoBERTencoder/3e-5/0.6-0.2-0.2/100 \
                 --learning_rate 4e-5
+
+
+python3 main.py --token_level word-level \
+                  --model_type clphobert \
+                  --model_dir MODEL_DIR \
+                  --data_dir Hackathon \
+                  --train_batch_size 32\
+                  --do_train \
+                  --do_eval \
+                  --save_steps 56 \
+                  --logging_steps 56 \
+                  --num_train_epochs 20 \
+                  --tuning_metric mean_intent_slot \
+                  --use_intent_context_attention \
+                  --attention_embedding_size 200 \
+                  --use_crf \
+                  --gpu_id 0 \
+                  --pretrained \
+                  --pretrained_path Model_Hackathon/JointCLBERT-CRF_PhoBERTencoder_hardnega_batch16/3e-5/0.6-0.2-0.2/100 \
+                  --embedding_type soft \
+                  --intent_loss_weight 0.2 \
+                  --slot_loss_weight 0.6 \
+                  --contrastive_loss_weight 0.2 \
+                  --use_contrastive_learning \
+                  --seed 100 \
+                  --use_MOO 0 \
+                  --MOO_name CAGrad \
+                  --task_num 3 \
+                  --use_decompose 1 \
+                  --decompose_name SVD \
+                  --epoch_phase1_threshold -1 \
+                  --Number_frozen_block 11 \
+                  --contrastive_margin 0.4 \
+                  --num_negative_samples 4 \
+                  --learning_rate 4e-5
 
 
                   
