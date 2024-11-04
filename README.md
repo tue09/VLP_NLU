@@ -1,4 +1,4 @@
-# VLP_NLU: An Improve of Joint Intent Detection and Slot Filling for Vietnamese
+# VLP_NLU: An Improvement of Joint Intent Detection and Slot Filling for Vietnamese
 
 This project implements a joint model, **JointIDSF**, for intent detection and slot filling, extending the recent state-of-the-art [JointBERT+CRF](https://arxiv.org/abs/1902.10909) model. JointIDSF integrates an intent-slot attention layer to explicitly incorporate intent context information into slot filling via "soft" intent label embedding.
 
